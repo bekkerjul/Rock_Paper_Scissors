@@ -1,0 +1,34 @@
+from random import choice
+
+steps = ['камень', 'ножницы', 'бумага']
+move_of_player = input()
+move_of_computer = choice(steps)
+
+while True:
+    if move_of_player.lower() not in steps:
+        print('Ошибка! Попробуйте еще раз!')
+        move_of_player = input()
+    else:
+        break
+
+if move_of_player.lower() == 'камень':
+  if move_of_computer == 'камень':
+    print(f'Компьютер выбрал {move_of_computer}. Ничья!')
+  elif move_of_computer == 'ножницы':
+    print(f'Компьютер выбрал {move_of_computer}. Вы выиграли!')
+  else:
+    print(f'Компьютер выбрал {move_of_computer}. Вы проиграли!')
+elif move_of_player.lower() == 'ножницы':
+  if move_of_computer == 'ножницы':
+    print(f'Компьютер выбрал {move_of_computer}. Ничья!')
+  elif move_of_computer == 'камень':
+    print(f'Компьютер выбрал {move_of_computer}. Вы проиграли!')
+  else:
+    print(f'Компьютер выбрал {move_of_computer}. Вы выиграли!')
+else:
+  if move_of_computer == 'бумага':
+    print(f'Компьютер выбрал {move_of_computer}. Ничья!')
+  elif move_of_computer == 'ножницы':
+    print(f'Компьютер выбрал {move_of_computer}. Вы проиграли!')
+  else:
+    print(f'Компьютер выбрал {move_of_computer}. Вы выиграли!')
